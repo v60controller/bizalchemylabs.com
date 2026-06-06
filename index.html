@@ -414,7 +414,7 @@
       .nav-links { display: none; }
       .hamburger { display: flex; }
       .hero-inner { grid-template-columns: 1fr; }
-      .hero-right { height: 360px; order: -1; }
+      .hero-right { height: 300px; }
       .dash-card { width: 290px; }
       .pain-grid { grid-template-columns: 1fr 1fr; }
       .services-grid { max-width: 100%; }
@@ -423,15 +423,15 @@
       .step { display: flex; gap: 20px; text-align: left; align-items: flex-start; }
       .step-num { margin: 0; flex-shrink: 0; }
       .reviews-grid { grid-template-columns: 1fr; }
-      .about-inner { grid-template-columns: 1fr; gap: 32px; }
+      .about-inner { grid-template-columns: 1fr; gap: 24px; }
       .about-photo { margin: 0 auto; }
     }
     @media (max-width: 520px) {
       .pain-grid { grid-template-columns: 1fr; }
       .stat-bar { grid-template-columns: repeat(2,1fr); padding: 24px 20px; }
-      .hero-ctas { flex-direction: column; }
+      .hero-ctas { flex-direction: column; align-items: stretch; }
       .foot-top { flex-direction: column; align-items: center; text-align: center; }
-      .foot-brand span { display: inline; margin-top: 0; margin-left: 4px; }
+      .foot-brand span { display: block; margin-top: 4px; margin-left: 0; }
     }
 
     /* ── HERO ILLUSTRATION ── */
@@ -600,7 +600,30 @@
 
     /* ── RESPONSIVE additions ── */
     @media (max-width:900px) {
-      .hc-wrap-1,.hc-wrap-2,.hc-wrap-3,.hc-wrap-4,.hc-wrap-5 { display:none; }
+      .hero-inner { grid-template-columns:1fr; gap:40px; text-align:center; }
+      .hero-sub { margin-left:auto; margin-right:auto; }
+      .hero-ctas { justify-content:center; }
+      .hero-trust { justify-content:center; }
+      .hero-right { height:380px; width:100%; max-width:480px; margin:0 auto; }
+      .hc { width:158px; padding:10px 13px; }
+      .hc-tag { font-size:0.55rem; }
+      .hc-title { font-size:0.72rem; }
+      .hc-sub { font-size:0.62rem; }
+      .check-row { font-size:0.62rem; }
+      .hc-wrap-1 { top:4%; left:-2%; }
+      .hc-wrap-2 { bottom:6%; left:-2%; }
+      .hc-wrap-3 { bottom:4%; right:-2%; }
+      .hc-wrap-4 { top:2%; right:-2%; }
+      .hc-wrap-5 { top:-5%; left:50%; transform:translateX(-50%); }
+    }
+    @media (max-width:520px) {
+      .hero-right { height:340px; }
+      .hc { width:132px; padding:8px 10px; }
+      .hc-wrap-1 { top:2%; left:-6px; }
+      .hc-wrap-2 { bottom:4%; left:-6px; }
+      .hc-wrap-3 { bottom:2%; right:-6px; }
+      .hc-wrap-4 { top:0%; right:-6px; }
+      .hc-wrap-5 { top:-6%; left:50%; transform:translateX(-50%); }
     }
     @media (max-width:768px) {
       #stat-strip .strip-inner { grid-template-columns:repeat(2,1fr); gap:16px; }
@@ -846,6 +869,42 @@
     .faq-item.open .faq-a { max-height:700px; padding-bottom:20px; }
     .faq-a p { font-size:0.9375rem; color:var(--muted); line-height:1.75; }
     @media (prefers-reduced-motion:reduce) { .faq-a,.faq-icon { transition:none; } }
+    @media (max-width:768px) {
+      :root { --pad: clamp(44px, 7vw, 72px); }
+      .wrap { padding:0 20px; }
+      .nav-inner { padding:0 20px; }
+      .hero-inner { padding:0 20px; }
+      .who-header { padding:0 20px; }
+      .faq-list { padding:0 20px; max-width:100%; }
+      .faq-q { font-size:0.9375rem; padding:18px 0; }
+      #hero { min-height:auto; padding-top:calc(var(--nav-h) + 28px); padding-bottom:48px; }
+      .hero-h1 { font-size:clamp(2rem, 7vw, 2.6rem); }
+      .hero-sub { font-size:0.95rem; }
+      .hero-ctas { flex-direction:column; gap:12px; align-items:center; }
+      .btn-primary, .btn-outline { width:100%; max-width:300px; justify-content:center; }
+      .services-grid { grid-template-columns:1fr; }
+      .reviews-split { grid-template-columns:1fr; gap:28px; }
+      .reviews-right { height:300px; }
+      .rev-card { padding:28px 22px; }
+      .about-inner { grid-template-columns:1fr; text-align:center; }
+      .creds-logo-row { justify-content:center; }
+      .pain-cycler-card { padding:32px 20px; margin-top:28px; }
+      .step-cycler-card { padding:32px 20px; margin-top:28px; }
+      .hiw-content { padding:var(--pad) 20px; }
+      .hiw-roadmap { padding:0 8px; }
+      .who-cols { padding:0 16px; }
+      .ts-tools { gap:14px 16px; }
+      .strip-inner { padding:0 20px; }
+      #final-cta .cta-inner { padding:52px 20px; }
+      .cta-h2 { font-size:clamp(1.5rem, 5vw, 2rem); }
+      footer { padding:36px 20px 20px; }
+      .foot-top { flex-direction:column; gap:18px; align-items:center; text-align:center; }
+      .sticky-cta-btn { bottom:16px; right:12px; padding:12px 20px; font-size:0.8rem; }
+    }
+    @media (max-width:480px) {
+      .wrap { padding:0 16px; }
+      .who-cols { grid-template-columns:1fr; padding:0 14px; }
+    }
 
     /* ── HERO TRUST BADGE ── */
     .hero-trust {
@@ -945,6 +1004,198 @@
     .ts-badge.green  { background:#EEFAF4; color:#1A7B52; }
     .ts-badge.show { display:inline-flex; }
     .ts-name { font-size:0.67rem; font-weight:500; color:var(--muted); text-align:center; max-width:80px; line-height:1.3; }
+
+    /* ═══════════════ COMPREHENSIVE MOBILE OPTIMIZATION ═══════════════ */
+
+    /* Improve tap responsiveness across all interactive elements */
+    button, [role="button"], a[href],
+    .cyc-arrow, .rev-arrow, .faq-q, .btn-pill, .btn-primary, .btn-outline, .btn-white {
+      touch-action: manipulation;
+    }
+
+    /* Smaller section padding on phones */
+    @media (max-width: 480px) {
+      :root { --pad: clamp(40px, 7vw, 64px); }
+    }
+
+    /* ── HERO ── */
+    @media (max-width: 767px) {
+      #hero {
+        min-height: auto;
+        padding-top: calc(var(--nav-h) + 28px);
+        padding-bottom: 48px;
+      }
+      .hero-inner { gap: 32px; }
+      .hero-sub { font-size: 0.95rem; margin-bottom: 28px; max-width: 100%; }
+      .hero-ctas { flex-direction: column; align-items: stretch; gap: 10px; }
+      .btn-primary, .btn-outline { width: 100%; justify-content: center; }
+    }
+    @media (max-width: 480px) {
+      #hero { padding-top: calc(var(--nav-h) + 16px); padding-bottom: 36px; }
+      .hero-right { height: 220px; }
+      .hero-h1 { font-size: clamp(1.9rem, 7.5vw, 2.4rem); }
+      .hero-badge { font-size: 0.68rem; padding: 5px 12px; margin-bottom: 18px; }
+      .hero-inner { padding: 0 16px; }
+      .hero-sub { font-size: 0.88rem; margin-bottom: 22px; }
+      .hero-trust { gap: 5px; }
+      .hero-trust-success, .hero-trust-sep, .hero-trust-verified, .hero-trust-upwork-badge {
+        font-size: 0.75rem;
+      }
+    }
+
+    /* ── NAV ── */
+    @media (max-width: 480px) {
+      .nav-inner { padding: 0 14px; }
+      .nav-logo { font-size: 1.1rem; }
+      .mobile-nav { padding: 36px 24px; gap: 24px; }
+      .mobile-nav a { font-size: 1.9rem; }
+    }
+
+    /* ── STAT STRIP ── */
+    @media (max-width: 480px) {
+      #stat-strip { padding: 20px 0; }
+      .strip-num { font-size: 1.55rem; }
+      .strip-lbl { font-size: 0.7rem; }
+      .strip-item { padding: 0 8px; }
+    }
+
+    /* ── PAIN CYCLER ── */
+    @media (max-width: 767px) {
+      .cycler-outer { padding: 0 14px; }
+      .cyc-arrow { width: 44px; height: 44px; opacity: 0.7; flex-shrink: 0; }
+      .cycler-nav { gap: 10px; }
+    }
+    @media (max-width: 480px) {
+      .pain-cycler-card { padding: 26px 14px; }
+      .cycler-q { font-size: 1.05rem; }
+      .cycler-a { font-size: 0.87rem; }
+      .cycler-slot { min-height: 150px; }
+    }
+
+    /* ── BRIDGE ── */
+    @media (max-width: 767px) {
+      .bridge-inner { padding: 0 16px; }
+      .bridge-h2 { font-size: clamp(1.5rem, 5.5vw, 2rem); }
+      .bridge-body { font-size: 0.95rem; margin-bottom: 40px; }
+    }
+    @media (max-width: 480px) {
+      #bridge .stat-num { font-size: 2.2rem; }
+      #bridge .stat-item { padding: 22px 12px 18px; }
+    }
+
+    /* ── SERVICES ── */
+    @media (max-width: 767px) {
+      .services-grid { grid-template-columns: 1fr; max-width: 100%; }
+      .svc-card { padding: 28px 20px; }
+    }
+
+    /* ── WHO I WORK WITH ── */
+    @media (max-width: 767px) {
+      .who-scroll-window { max-height: 460px; }
+      .who-cols { padding: 0 14px; }
+    }
+    @media (max-width: 480px) {
+      .who-scroll-window { max-height: 400px; }
+      .who-cols { padding: 0 10px; gap: 12px; }
+      .who-ind-card { padding: 16px 14px; }
+      .who-ind-icon { width: 52px; height: 52px; margin-bottom: 10px; }
+      .who-ind-name { font-size: 0.875rem; }
+      .who-ind-examples { font-size: 0.7rem; }
+    }
+
+    /* ── HOW IT WORKS ── */
+    @media (max-width: 767px) {
+      .hiw-roadmap { padding: 0 10px; margin: 18px auto 0; max-width: 100%; }
+      .hiw-content { padding-left: 16px; padding-right: 16px; }
+      .step-cycler-card { padding: 30px 18px; }
+      #how-it-works .cyc-arrow { width: 44px; height: 44px; }
+    }
+    @media (max-width: 480px) {
+      .hiw-roadmap { padding: 0 4px; }
+      .step-cycler-card { padding: 24px 14px; }
+      .step-cyc-title { font-size: 1.1rem; }
+      .step-cyc-desc { font-size: 0.9rem; }
+    }
+
+    /* ── TESTIMONIALS ── */
+    @media (max-width: 767px) {
+      .reviews-split { padding: 0 16px; gap: 28px; }
+      .reviews-right { height: 430px; }
+      .rev-arrow { width: 48px; height: 48px; }
+      .rev-text {
+        font-size: 0.875rem;
+        display: -webkit-box;
+        -webkit-line-clamp: 7;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+    }
+    @media (max-width: 480px) {
+      .reviews-right { height: 400px; }
+      .rev-card { padding: 22px 16px; }
+      .rev-text { font-size: 0.82rem; -webkit-line-clamp: 6; }
+      .rev-qmark { font-size: 3rem; margin-bottom: -8px; }
+      .rev-name { font-size: 1rem; }
+      .rev-role { font-size: 0.75rem; }
+    }
+
+    /* ── ABOUT ── */
+    @media (max-width: 767px) {
+      .about-photo { width: 120px; height: 120px; font-size: 2rem; }
+      .creds-logo-row { gap: 18px; justify-content: center; }
+    }
+    @media (max-width: 480px) {
+      .about-photo { width: 100px; height: 100px; font-size: 1.8rem; }
+      .about-body { font-size: 0.9rem; margin-bottom: 24px; }
+    }
+
+    /* ── TECH STACK ── */
+    @media (max-width: 767px) {
+      .ts-tools { gap: 14px 16px; }
+      .ts-sub { font-size: 0.9rem; margin-bottom: 40px; }
+    }
+    @media (max-width: 480px) {
+      .ts-tools { gap: 10px 12px; }
+      .ts-logo { height: 28px; max-width: 60px; }
+      .ts-logo-wrap { height: 28px; }
+      .ts-badge { font-size: 0.63rem; padding: 4px 8px; height: 28px; }
+      .ts-name { font-size: 0.6rem; max-width: 60px; }
+    }
+
+    /* ── FAQ ── */
+    @media (max-width: 767px) {
+      .faq-list { max-width: 100%; padding: 0; }
+      .faq-q { font-size: 0.9375rem; padding: 18px 0; }
+      .faq-a p { font-size: 0.875rem; }
+    }
+
+    /* ── FINAL CTA ── */
+    @media (max-width: 480px) {
+      .cta-inner { padding: 0 16px; }
+      .cta-h2 { font-size: clamp(1.5rem, 6vw, 2rem); }
+      .cta-sub { font-size: 0.9rem; margin-bottom: 24px; }
+      .cta-btns { flex-direction: column; align-items: center; gap: 14px; }
+      .btn-white { width: 100%; max-width: 320px; justify-content: center; }
+    }
+
+    /* ── FOOTER ── */
+    @media (max-width: 767px) {
+      .foot-top { flex-direction: column; align-items: center; text-align: center; gap: 16px; }
+      .foot-icons { justify-content: center; }
+      .foot-icon { width: 44px; height: 44px; }
+    }
+
+    /* ── FLOATING CTA ── */
+    @media (max-width: 480px) {
+      .sticky-cta-btn { bottom: 14px; right: 10px; padding: 11px 16px; font-size: 0.78rem; gap: 5px; }
+    }
+
+    /* ── GENERAL SPACING ── */
+    @media (max-width: 480px) {
+      .wrap { padding: 0 16px; }
+      .bridge-inner { padding: 0 16px; }
+      .section-sub { max-width: 100%; }
+    }
   </style>
 </head>
 <body>
@@ -999,7 +1250,7 @@
         <span class="hero-trust-success">100% Job Success</span>
         <span class="hero-trust-sep">·</span>
         <img class="hero-upwork-logo"
-          src="https://cdn.worldvectorlogo.com/logos/upwork.svg"
+          src="https://cdn.simpleicons.org/upwork/6FDA44"
           alt="Upwork"
           onerror="this.style.display='none';this.nextElementSibling.style.display='inline'">
         <span class="hero-trust-upwork-badge" style="display:none">Upwork</span>
@@ -1459,21 +1710,19 @@
         <p class="about-body">I'm a Mumbai-based finance operator with 12+ years running the full finance function for founder-led businesses. I've owned everything from day-to-day bookkeeping to board-level reporting, across India and Singapore, simultaneously managing HR and compliance with zero penalties. I work with US, Australian, and Canadian small businesses remotely, at 40 to 50% the cost of a local hire, with none of the hand-holding.<br><br>When I'm not in the books, I'm brewing V60 coffee and riding long distances on my bike. Both require patience and attention to detail, which is probably why I like finance.</p>
         <div class="creds-logo-row">
           <div class="cred-logo-item">
-            <img class="cred-logo-img" src="https://cdn.worldvectorlogo.com/logos/quickbooks-2.svg" alt="QuickBooks" loading="lazy"
+            <img class="cred-logo-img" src="https://cdn.simpleicons.org/quickbooks/2CA01C" alt="QuickBooks" loading="lazy"
               onerror="this.style.display='none';this.nextElementSibling.style.display='inline-flex'">
             <span class="ts-badge" style="display:none">QuickBooks</span>
             <div class="cred-logo-text">ProAdvisor</div>
           </div>
           <div class="cred-logo-item">
-            <img class="cred-logo-img" src="https://cdn.worldvectorlogo.com/logos/xero-2.svg" alt="Xero" loading="lazy"
+            <img class="cred-logo-img" src="https://cdn.simpleicons.org/xero/13B5EA" alt="Xero" loading="lazy"
               onerror="this.style.display='none';this.nextElementSibling.style.display='inline-flex'">
             <span class="ts-badge" style="display:none">Xero</span>
             <div class="cred-logo-text">Certified</div>
           </div>
           <div class="cred-logo-item">
-            <img class="cred-logo-img" src="https://cdn.worldvectorlogo.com/logos/zoho-books.svg" alt="Zoho Books" loading="lazy"
-              onerror="this.src='https://cdn.worldvectorlogo.com/logos/zoho-1.svg';this.onerror=function(){this.style.display='none';this.nextElementSibling.style.display='inline-flex'}">
-            <span class="ts-badge" style="display:none">Zoho Books</span>
+            <span class="ts-badge" style="display:inline-flex">Zoho Books</span>
             <div class="cred-logo-text">Certified</div>
           </div>
         </div>
@@ -1493,11 +1742,11 @@
       <div class="ts-category">
         <div class="ts-cat-label">Accounting</div>
         <div class="ts-tools">
-          <div class="ts-tool"><div class="ts-logo-wrap"><img class="ts-logo" src="https://cdn.worldvectorlogo.com/logos/quickbooks-2.svg" alt="QuickBooks" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.classList.add('show')"><span class="ts-badge">QuickBooks</span></div><span class="ts-name">QuickBooks Online</span></div>
-          <div class="ts-tool"><div class="ts-logo-wrap"><img class="ts-logo" src="https://cdn.worldvectorlogo.com/logos/xero-2.svg" alt="Xero" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.classList.add('show')"><span class="ts-badge">Xero</span></div><span class="ts-name">Xero</span></div>
-          <div class="ts-tool"><div class="ts-logo-wrap"><img class="ts-logo" src="https://cdn.worldvectorlogo.com/logos/zoho-books.svg" alt="Zoho Books" loading="lazy" onerror="this.src='https://cdn.worldvectorlogo.com/logos/zoho-1.svg';this.onerror=function(){this.style.display='none';this.nextElementSibling.classList.add('show')}"><span class="ts-badge">Zoho Books</span></div><span class="ts-name">Zoho Books</span></div>
-          <div class="ts-tool"><div class="ts-logo-wrap"><img class="ts-logo" src="https://cdn.worldvectorlogo.com/logos/wave-3.svg" alt="Wave" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.classList.add('show')"><span class="ts-badge">Wave</span></div><span class="ts-name">Wave</span></div>
-          <div class="ts-tool"><div class="ts-logo-wrap"><img class="ts-logo" src="https://cdn.worldvectorlogo.com/logos/freshbooks-1.svg" alt="FreshBooks" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.classList.add('show')"><span class="ts-badge">FreshBooks</span></div><span class="ts-name">FreshBooks</span></div>
+          <div class="ts-tool"><div class="ts-logo-wrap"><img class="ts-logo" src="https://cdn.simpleicons.org/quickbooks/2CA01C" alt="QuickBooks" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.classList.add('show')"><span class="ts-badge">QuickBooks</span></div><span class="ts-name">QuickBooks Online</span></div>
+          <div class="ts-tool"><div class="ts-logo-wrap"><img class="ts-logo" src="https://cdn.simpleicons.org/xero/13B5EA" alt="Xero" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.classList.add('show')"><span class="ts-badge">Xero</span></div><span class="ts-name">Xero</span></div>
+          <div class="ts-tool"><div class="ts-logo-wrap"><span class="ts-badge show">Zoho Books</span></div><span class="ts-name">Zoho Books</span></div>
+          <div class="ts-tool"><div class="ts-logo-wrap"><span class="ts-badge show">Wave</span></div><span class="ts-name">Wave</span></div>
+          <div class="ts-tool"><div class="ts-logo-wrap"><img class="ts-logo" src="https://cdn.simpleicons.org/freshbooks/0075DD" alt="FreshBooks" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.classList.add('show')"><span class="ts-badge">FreshBooks</span></div><span class="ts-name">FreshBooks</span></div>
           <div class="ts-tool"><div class="ts-logo-wrap"><span class="ts-badge show">Tally</span></div><span class="ts-name">Tally</span></div>
         </div>
       </div>
@@ -1506,16 +1755,16 @@
         <div class="ts-cat-label">ERP</div>
         <div class="ts-tools">
           <div class="ts-tool"><div class="ts-logo-wrap"><span class="ts-badge show">ERPNext</span></div><span class="ts-name">ERPNext</span></div>
-          <div class="ts-tool"><div class="ts-logo-wrap"><img class="ts-logo" src="https://cdn.worldvectorlogo.com/logos/zoho-1.svg" alt="Zoho One" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.classList.add('show')"><span class="ts-badge">Zoho One</span></div><span class="ts-name">Zoho One</span></div>
+          <div class="ts-tool"><div class="ts-logo-wrap"><img class="ts-logo" src="https://cdn.simpleicons.org/zoho/C8202B" alt="Zoho One" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.classList.add('show')"><span class="ts-badge">Zoho One</span></div><span class="ts-name">Zoho One</span></div>
         </div>
       </div>
 
       <div class="ts-category">
         <div class="ts-cat-label">Payroll</div>
         <div class="ts-tools">
-          <div class="ts-tool"><div class="ts-logo-wrap"><img class="ts-logo" src="https://cdn.worldvectorlogo.com/logos/gusto-2.svg" alt="Gusto" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.classList.add('show')"><span class="ts-badge">Gusto</span></div><span class="ts-name">Gusto</span></div>
-          <div class="ts-tool"><div class="ts-logo-wrap"><img class="ts-logo" src="https://cdn.worldvectorlogo.com/logos/zoho-1.svg" alt="Zoho Payroll" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.classList.add('show')"><span class="ts-badge">Zoho Pay</span></div><span class="ts-name">Zoho Payroll</span></div>
-          <div class="ts-tool"><div class="ts-logo-wrap"><img class="ts-logo" src="https://cdn.worldvectorlogo.com/logos/adp-1.svg" alt="ADP" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.classList.add('show')"><span class="ts-badge">ADP</span></div><span class="ts-name">ADP</span></div>
+          <div class="ts-tool"><div class="ts-logo-wrap"><img class="ts-logo" src="https://cdn.simpleicons.org/gusto/F45D48" alt="Gusto" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.classList.add('show')"><span class="ts-badge">Gusto</span></div><span class="ts-name">Gusto</span></div>
+          <div class="ts-tool"><div class="ts-logo-wrap"><img class="ts-logo" src="https://cdn.simpleicons.org/zoho/C8202B" alt="Zoho Payroll" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.classList.add('show')"><span class="ts-badge">Zoho Pay</span></div><span class="ts-name">Zoho Payroll</span></div>
+          <div class="ts-tool"><div class="ts-logo-wrap"><span class="ts-badge show">ADP</span></div><span class="ts-name">ADP</span></div>
           <div class="ts-tool"><div class="ts-logo-wrap"><span class="ts-badge show">Paychex</span></div><span class="ts-name">Paychex</span></div>
         </div>
       </div>
@@ -1523,32 +1772,32 @@
       <div class="ts-category">
         <div class="ts-cat-label">CRM</div>
         <div class="ts-tools">
-          <div class="ts-tool"><div class="ts-logo-wrap"><img class="ts-logo" src="https://cdn.worldvectorlogo.com/logos/hubspot.svg" alt="HubSpot" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.classList.add('show')"><span class="ts-badge">HubSpot</span></div><span class="ts-name">HubSpot</span></div>
+          <div class="ts-tool"><div class="ts-logo-wrap"><img class="ts-logo" src="https://cdn.simpleicons.org/hubspot/FF7A59" alt="HubSpot" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.classList.add('show')"><span class="ts-badge">HubSpot</span></div><span class="ts-name">HubSpot</span></div>
           <div class="ts-tool"><div class="ts-logo-wrap"><span class="ts-badge show">Apollo</span></div><span class="ts-name">Apollo</span></div>
-          <div class="ts-tool"><div class="ts-logo-wrap"><img class="ts-logo" src="https://cdn.worldvectorlogo.com/logos/attio.svg" alt="Attio" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.classList.add('show')"><span class="ts-badge">Attio</span></div><span class="ts-name">Attio</span></div>
+          <div class="ts-tool"><div class="ts-logo-wrap"><span class="ts-badge show">Attio</span></div><span class="ts-name">Attio</span></div>
         </div>
       </div>
 
       <div class="ts-category">
         <div class="ts-cat-label">Project Management</div>
         <div class="ts-tools">
-          <div class="ts-tool"><div class="ts-logo-wrap"><img class="ts-logo" src="https://cdn.worldvectorlogo.com/logos/jira-1.svg" alt="Jira" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.classList.add('show')"><span class="ts-badge">Jira</span></div><span class="ts-name">Jira</span></div>
-          <div class="ts-tool"><div class="ts-logo-wrap"><img class="ts-logo" src="https://cdn.worldvectorlogo.com/logos/clickup.svg" alt="ClickUp" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.classList.add('show')"><span class="ts-badge">ClickUp</span></div><span class="ts-name">ClickUp</span></div>
+          <div class="ts-tool"><div class="ts-logo-wrap"><img class="ts-logo" src="https://cdn.simpleicons.org/jira/0052CC" alt="Jira" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.classList.add('show')"><span class="ts-badge">Jira</span></div><span class="ts-name">Jira</span></div>
+          <div class="ts-tool"><div class="ts-logo-wrap"><img class="ts-logo" src="https://cdn.simpleicons.org/clickup/7B68EE" alt="ClickUp" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.classList.add('show')"><span class="ts-badge">ClickUp</span></div><span class="ts-name">ClickUp</span></div>
         </div>
       </div>
 
       <div class="ts-category">
         <div class="ts-cat-label">Spreadsheets</div>
         <div class="ts-tools">
-          <div class="ts-tool"><div class="ts-logo-wrap"><img class="ts-logo" src="https://cdn.worldvectorlogo.com/logos/microsoft-excel-2013.svg" alt="Excel" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.classList.add('show')"><span class="ts-badge">Excel</span></div><span class="ts-name">Microsoft Excel</span></div>
-          <div class="ts-tool"><div class="ts-logo-wrap"><img class="ts-logo" src="https://cdn.worldvectorlogo.com/logos/google-sheets-logo.svg" alt="Google Sheets" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.classList.add('show')"><span class="ts-badge">Sheets</span></div><span class="ts-name">Google Sheets</span></div>
+          <div class="ts-tool"><div class="ts-logo-wrap"><img class="ts-logo" src="https://cdn.simpleicons.org/microsoftexcel/217346" alt="Excel" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.classList.add('show')"><span class="ts-badge">Excel</span></div><span class="ts-name">Microsoft Excel</span></div>
+          <div class="ts-tool"><div class="ts-logo-wrap"><img class="ts-logo" src="https://cdn.simpleicons.org/googlesheets/34A853" alt="Google Sheets" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.classList.add('show')"><span class="ts-badge">Sheets</span></div><span class="ts-name">Google Sheets</span></div>
         </div>
       </div>
 
       <div class="ts-category">
         <div class="ts-cat-label">Automation</div>
         <div class="ts-tools">
-          <div class="ts-tool"><div class="ts-logo-wrap"><img class="ts-logo" src="https://cdn.worldvectorlogo.com/logos/zapier.svg" alt="Zapier" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.classList.add('show')"><span class="ts-badge">Zapier</span></div><span class="ts-name">Zapier</span></div>
+          <div class="ts-tool"><div class="ts-logo-wrap"><img class="ts-logo" src="https://cdn.simpleicons.org/zapier/FF4A00" alt="Zapier" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.classList.add('show')"><span class="ts-badge">Zapier</span></div><span class="ts-name">Zapier</span></div>
           <div class="ts-tool"><div class="ts-logo-wrap"><span class="ts-badge show">n8n</span></div><span class="ts-name">n8n</span></div>
         </div>
       </div>
@@ -1556,9 +1805,9 @@
       <div class="ts-category">
         <div class="ts-cat-label">Communication</div>
         <div class="ts-tools">
-          <div class="ts-tool"><div class="ts-logo-wrap"><img class="ts-logo" src="https://cdn.worldvectorlogo.com/logos/slack-new-logo.svg" alt="Slack" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.classList.add('show')"><span class="ts-badge">Slack</span></div><span class="ts-name">Slack</span></div>
-          <div class="ts-tool"><div class="ts-logo-wrap"><img class="ts-logo" src="https://cdn.worldvectorlogo.com/logos/gmail-icon.svg" alt="Gmail" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.classList.add('show')"><span class="ts-badge">Gmail</span></div><span class="ts-name">Gmail</span></div>
-          <div class="ts-tool"><div class="ts-logo-wrap"><img class="ts-logo" src="https://cdn.worldvectorlogo.com/logos/whatsapp-icon.svg" alt="WhatsApp" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.classList.add('show')"><span class="ts-badge">WhatsApp</span></div><span class="ts-name">WhatsApp Business</span></div>
+          <div class="ts-tool"><div class="ts-logo-wrap"><img class="ts-logo" src="https://cdn.simpleicons.org/slack/4A154B" alt="Slack" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.classList.add('show')"><span class="ts-badge">Slack</span></div><span class="ts-name">Slack</span></div>
+          <div class="ts-tool"><div class="ts-logo-wrap"><img class="ts-logo" src="https://cdn.simpleicons.org/gmail/EA4335" alt="Gmail" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.classList.add('show')"><span class="ts-badge">Gmail</span></div><span class="ts-name">Gmail</span></div>
+          <div class="ts-tool"><div class="ts-logo-wrap"><img class="ts-logo" src="https://cdn.simpleicons.org/whatsapp/25D366" alt="WhatsApp" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.classList.add('show')"><span class="ts-badge">WhatsApp</span></div><span class="ts-name">WhatsApp Business</span></div>
         </div>
       </div>
 
@@ -1566,7 +1815,7 @@
         <div class="ts-cat-label">AI Stack</div>
         <div class="ts-tools">
           <div class="ts-tool"><div class="ts-logo-wrap"><span class="ts-badge orange show">Claude</span></div><span class="ts-name">Claude</span></div>
-          <div class="ts-tool"><div class="ts-logo-wrap"><img class="ts-logo" src="https://cdn.worldvectorlogo.com/logos/chatgpt-6.svg" alt="ChatGPT" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.classList.add('show')"><span class="ts-badge green">ChatGPT</span></div><span class="ts-name">ChatGPT</span></div>
+          <div class="ts-tool"><div class="ts-logo-wrap"><img class="ts-logo" src="https://cdn.simpleicons.org/openai/412991" alt="ChatGPT" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.classList.add('show')"><span class="ts-badge green">ChatGPT</span></div><span class="ts-name">ChatGPT</span></div>
           <div class="ts-tool"><div class="ts-logo-wrap"><span class="ts-badge blue show">Gemini</span></div><span class="ts-name">Gemini</span></div>
           <div class="ts-tool"><div class="ts-logo-wrap"><span class="ts-badge purple show">NotebookLM</span></div><span class="ts-name">NotebookLM</span></div>
         </div>
@@ -1900,11 +2149,13 @@
   }
 
   document.addEventListener('mousemove', (e) => {
-    tx = (e.clientX / window.innerWidth  - 0.5) * 2;
-    ty = (e.clientY / window.innerHeight - 0.5) * 2;
+    if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+      tx = (e.clientX / window.innerWidth  - 0.5) * 2;
+      ty = (e.clientY / window.innerHeight - 0.5) * 2;
+    }
   }, { passive: true });
 
-  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches && window.innerWidth >= 768) {
     animateParallax();
   }
 
